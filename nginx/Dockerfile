@@ -1,6 +1,6 @@
-FROM alpine:3.4
+FROM alpine:3.12
 
-MAINTAINER Vincent Composieux <vincent.composieux@gmail.com>
+MAINTAINER Yann Carpentier <yann.carpentier@protonmail.com>
 
 RUN apk add --update nginx
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*

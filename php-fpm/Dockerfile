@@ -1,34 +1,34 @@
-FROM alpine:3.4
+FROM alpine:3.12
 
-MAINTAINER Vincent Composieux <vincent.composieux@gmail.com>
+MAINTAINER Yann Carpentier <yann.carpentier@protonmail.com>
 
 RUN apk add --update \
-    php5-fpm \
-    php5-apcu \
-    php5-ctype \
-    php5-curl \
-    php5-dom \
-    php5-gd \
-    php5-iconv \
-    php5-imagick \
-    php5-json \
-    php5-intl \
-    php5-mcrypt \
-    php5-mysql \
-    php5-opcache \
-    php5-openssl \
-    php5-pdo \
-    php5-pdo_mysql \
-    php5-mysqli \
-    php5-xml \
-    php5-zlib
+    php7-fpm \
+    php7-apcu \
+    php7-ctype \
+    php7-curl \
+    php7-dom \
+    php7-gd \
+    php7-iconv \
+    php7-imagick \
+    php7-json \
+    php7-intl \
+    php7-mcrypt \
+    php7-opcache \
+    php7-openssl \
+	php7-sqlite3 \
+    php7-pdo \
+    php7-pdo_mysql \
+    php7-mysqli \
+    php7-xml \
+    php7-zlib
 
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-ADD symfony.ini /etc/php5/fpm/conf.d/
-ADD symfony.ini /etc/php5/cli/conf.d/
+ADD symfony.ini /etc/php7/fpm/conf.d/
+ADD symfony.ini /etc/php7/cli/conf.d/
 
-ADD symfony.pool.conf /etc/php5/fpm.d/
+ADD symfony.pool.conf /etc/php7/fpm.d/
 
 CMD ["php-fpm", "-F"]
 
