@@ -4,6 +4,7 @@ MAINTAINER Yann Carpentier <yann.carpentier@protonmail.com>
 
 RUN apk add --update \
     php7-fpm \
+	php-fpm \
     php7-apcu \
     php7-ctype \
     php7-curl \
@@ -30,6 +31,6 @@ ADD symfony.ini /etc/php7/cli/conf.d/
 
 ADD symfony.pool.conf /etc/php7/fpm.d/
 
-CMD ["php-fpm", "-F"]
+CMD ["php-fpm7", "-F"]
 
 EXPOSE 9000
